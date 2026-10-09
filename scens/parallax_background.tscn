@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://i1nch24aqmcd"]
+
+[ext_resource type="Texture2D" uid="uid://2a16m3my4i1l" path="res://assets/parallax/skies/Sky_sky.png" id="1_1a6pi"]
+[ext_resource type="Texture2D" uid="uid://12fnymhbustp" path="res://assets/parallax/skies/sky_moon.png" id="2_bxhrb"]
+[ext_resource type="Texture2D" uid="uid://oylynpr26q7" path="res://assets/parallax/skies/Sky_back_mountain.png" id="3_hv3ej"]
+[ext_resource type="Texture2D" uid="uid://cgh88sc7fvcy7" path="res://assets/parallax/skies/sky_clouds.png" id="4_ges33"]
+[ext_resource type="Texture2D" uid="uid://s8ojcn0g7xvs" path="res://assets/parallax/skies/sky_front_mountain.png" id="5_5mayh"]
+[ext_resource type="Texture2D" uid="uid://cyigbh0l58ehm" path="res://assets/parallax/skies/Sky_cloud_single.png" id="6_0x0ap"]
+[ext_resource type="Texture2D" uid="uid://bje7r1crg5obt" path="res://assets/parallax/skies/sky_cloud_floor_2.png" id="7_ldaec"]
+[ext_resource type="Texture2D" uid="uid://c2w55avvsc3oj" path="res://assets/parallax/skies/sky_cloud_floor.png" id="8_3ec6c"]
+[ext_resource type="Texture2D" uid="uid://cwx3a5p5tn321" path="res://assets/parallax/skies/Sky_front_cloud.png" id="9_7t6um"]
+
+[sub_resource type="GDScript" id="GDScript_vkqoe"]
+script/source = "extends ParallaxBackground
+
+var speed = 100
+
+
+func _process(delta: float) -> void:
+	scroll_offset.x -= speed * delta
+"
+
+[node name="ParallaxBackground" type="ParallaxBackground" unique_id=636384153]
+script = SubResource("GDScript_vkqoe")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=168132177]
+motion_scale = Vector2(0, 1)
+motion_mirroring = Vector2(1150, 0)
+
+[node name="SkySky" type="Sprite2D" parent="ParallaxLayer" unique_id=809033574]
+position = Vector2(574, 326)
+scale = Vector2(0.6073684, 0.65)
+texture = ExtResource("1_1a6pi")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="." unique_id=1594534000]
+motion_scale = Vector2(0.01, 1)
+motion_mirroring = Vector2(1150, 0)
+
+[node name="SkyMoon" type="Sprite2D" parent="ParallaxLayer2" unique_id=135396217]
+position = Vector2(574, 325.99997)
+scale = Vector2(0.3036842, 0.27083334)
+texture = ExtResource("2_bxhrb")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="." unique_id=699001928]
+motion_scale = Vector2(0.2, 1)
+motion_mirroring = Vector2(1150, 0)
+
+[node name="SkyBackMountain" type="Sprite2D" parent="ParallaxLayer3" unique_id=971519515]
+position = Vector2(573.5, 326)
+scale = Vector2(0.6078947, 0.65)
+texture = ExtResource("3_hv3ej")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="." unique_id=1157039066]
+motion_scale = Vector2(0.3, 1)
+motion_mirroring = Vector2(1150, 0)
+
+[node name="SkyClouds" type="Sprite2D" parent="ParallaxLayer4" unique_id=451070803]
+position = Vector2(573, 321.49997)
+scale = Vector2(0.608421, 0.65099996)
+texture = ExtResource("4_ges33")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="." unique_id=51878629]
+motion_scale = Vector2(0.4, 1)
+motion_mirroring = Vector2(1150, 0)
+
+[node name="SkyFrontMountain" type="Sprite2D" parent="ParallaxLayer5" unique_id=1770921578]
+position = Vector2(573.00006, 321.99997)
+scale = Vector2(0.6057895, 0.65)
+texture = ExtResource("5_5mayh")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="." unique_id=1512105989]
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(1150, 0)
+
+[node name="SkyCloudSingle" type="Sprite2D" parent="ParallaxLayer6" unique_id=993188388]
+position = Vector2(572.5, 347)
+scale = Vector2(0.6089474, 0.708)
+texture = ExtResource("6_0x0ap")
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="." unique_id=106170994]
+motion_scale = Vector2(0.6, 1)
+motion_mirroring = Vector2(1150, 0)
+
+[node name="SkyCloudFloor2" type="Sprite2D" parent="ParallaxLayer7" unique_id=189210389]
+position = Vector2(575, 321.5)
+scale = Vector2(0.6063158, 0.651)
+texture = ExtResource("7_ldaec")
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="." unique_id=2100495435]
+motion_scale = Vector2(0.7, 1)
+motion_mirroring = Vector2(1150, 0)
+
+[node name="SkyCloudFloor" type="Sprite2D" parent="ParallaxLayer8" unique_id=2118465455]
+position = Vector2(573.5, 324)
+scale = Vector2(0.6078947, 0.646)
+texture = ExtResource("8_3ec6c")
+
+[node name="ParallaxLayer9" type="ParallaxLayer" parent="." unique_id=477298875]
+motion_scale = Vector2(0.8, 1)
+motion_mirroring = Vector2(1150, 0)
+
+[node name="SkyFrontCloud" type="Sprite2D" parent="ParallaxLayer9" unique_id=2101317383]
+position = Vector2(576, 321.5)
+scale = Vector2(0.6052632, 0.651)
+texture = ExtResource("9_7t6um")

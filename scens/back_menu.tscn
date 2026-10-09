@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cr5gn0eatowbi"]
+
+[sub_resource type="GDScript" id="GDScript_vkqoe"]
+script/source = "extends Button
+
+
+
+
+func _on_pressed() -> void:
+		get_tree().change_scene_to_file(\"res://scens/menu.tscn\")
+"
+
+[node name="back_menu" type="Button" unique_id=976743061]
+offset_left = 13.0
+offset_top = 12.0
+offset_right = 179.0
+offset_bottom = 78.0
+theme_override_font_sizes/font_size = 42
+text = "Меню
+"
+script = SubResource("GDScript_vkqoe")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://de1wo1qvvx3gw"]
+
+[ext_resource type="Script" uid="uid://duimuo31rwhcb" path="res://scripts/area_2d.gd" id="1_h24j8"]
+[ext_resource type="Texture2D" uid="uid://djtgiribpugxh" path="res://assets/Батут/jimp1.png" id="2_crmfo"]
+[ext_resource type="Texture2D" uid="uid://cdj0xt455dvv7" path="res://assets/Батут/jimp2.png" id="3_enqg4"]
+[ext_resource type="Texture2D" uid="uid://b7b3f1003kfld" path="res://assets/Батут/jimp3.png" id="4_0m4h3"]
+[ext_resource type="Texture2D" uid="uid://btiwmqp8gpo2u" path="res://assets/Батут/jimp4.png" id="5_btc6q"]
+[ext_resource type="Texture2D" uid="uid://c2nj7eouccuiv" path="res://assets/Батут/jimp5.png" id="6_kh81i"]
+[ext_resource type="Texture2D" uid="uid://dwng21yy2dlq4" path="res://assets/Батут/jimp6.png" id="7_rem8f"]
+[ext_resource type="Texture2D" uid="uid://xuvimwkhprjc" path="res://assets/Батут/jimp7.png" id="8_si2nt"]
+[ext_resource type="Texture2D" uid="uid://bt0ema76f4x1c" path="res://assets/Батут/jimp8.png" id="9_lttu6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vkqoe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_crmfo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_enqg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0m4h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_btc6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kh81i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rem8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_si2nt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lttu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_si2nt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rem8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kh81i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_btc6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0m4h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_enqg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_crmfo")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 65.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_co6qv"]
+size = Vector2(61, 11)
+
+[node name="Area2D" type="Area2D" unique_id=845652161]
+script = ExtResource("1_h24j8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=133951148]
+sprite_frames = SubResource("SpriteFrames_vkqoe")
+frame = 14
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2009346285]
+position = Vector2(-0.5, 25.5)
+shape = SubResource("RectangleShape2D_co6qv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c1c7knd2d77vd"]
+
+[ext_resource type="Script" uid="uid://cgowl6pkone41" path="res://lava.gd" id="1_637ji"]
+[ext_resource type="Texture2D" uid="uid://dyr6s8ywxy520" path="res://icon.svg" id="2_gna2q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htbrg"]
+atlas = ExtResource("2_gna2q")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vkqoe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htbrg")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_co6qv"]
+size = Vector2(126, 126)
+
+[node name="lava" type="Area2D" unique_id=109575750 node_paths=PackedStringArray("point")]
+script = ExtResource("1_637ji")
+point = NodePath("")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=339777584]
+sprite_frames = SubResource("SpriteFrames_vkqoe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=659137090]
+position = Vector2(-2, 1)
+shape = SubResource("RectangleShape2D_co6qv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

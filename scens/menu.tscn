@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://doq5dpmxv34mq"]
+
+[ext_resource type="Script" uid="uid://822j8odlh4t" path="res://scripts/menu.gd" id="1_gvvdr"]
+[ext_resource type="PackedScene" uid="uid://i1nch24aqmcd" path="res://scens/parallax_background.tscn" id="2_byj6f"]
+[ext_resource type="AudioStream" uid="uid://bi6ccrsfrs7a2" path="res://assets/sound/БГ.mp3" id="3_p7q78"]
+
+[node name="menu" type="Node2D" unique_id=2130944483]
+script = ExtResource("1_gvvdr")
+
+[node name="Button" type="Button" parent="." unique_id=1497529876]
+offset_left = 438.0
+offset_top = 136.0
+offset_right = 723.0
+offset_bottom = 203.0
+theme_override_font_sizes/font_size = 41
+text = "Играть"
+
+[node name="Button2" type="Button" parent="." unique_id=1552707518]
+offset_left = 438.0
+offset_top = 284.0
+offset_right = 723.0
+offset_bottom = 351.0
+theme_override_font_sizes/font_size = 41
+text = "Настройки"
+
+[node name="Button3" type="Button" parent="." unique_id=1682593436]
+offset_left = 438.0
+offset_top = 431.0
+offset_right = 723.0
+offset_bottom = 498.0
+theme_override_font_sizes/font_size = 41
+text = "Выход
+"
+
+[node name="ParallaxBackground" parent="." unique_id=636384153 instance=ExtResource("2_byj6f")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=739790686]
+stream = ExtResource("3_p7q78")
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

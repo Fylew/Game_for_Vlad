@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dxo76avrgyxmh"]
+
+[ext_resource type="Script" uid="uid://eft830wqvllv" path="res://scens/fly_panel.gd" id="1_ai6gd"]
+[ext_resource type="Texture2D" uid="uid://cwivrqdymfxey" path="res://assets/Трава/grass_platform1.png" id="2_fsain"]
+[ext_resource type="Texture2D" uid="uid://cb2fxf0mfbxdc" path="res://assets/Трава/grass_platform2.png" id="3_apldv"]
+[ext_resource type="Texture2D" uid="uid://dyp445wufki0n" path="res://assets/Трава/grass_platform3.png" id="4_vsicy"]
+[ext_resource type="Texture2D" uid="uid://p4a2h0gt7wks" path="res://assets/Трава/grass_platform4.png" id="5_2hnvm"]
+[ext_resource type="Texture2D" uid="uid://dcoxj3xrlq1vb" path="res://assets/Трава/grass_platform5.png" id="6_ubjyf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_co6qv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fsain")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_apldv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vsicy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2hnvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ubjyf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vkqoe"]
+size = Vector2(60, 15.999994)
+
+[node name="flyPanel" type="AnimatableBody2D" unique_id=1796056246]
+script = ExtResource("1_ai6gd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=379843278]
+position = Vector2(1, -10.000002)
+scale = Vector2(2.125, 1.71875)
+sprite_frames = SubResource("SpriteFrames_co6qv")
+autoplay = "default"
+frame = 2
+frame_progress = 0.4555946
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1380237786]
+position = Vector2(1, 3.0000038)
+scale = Vector2(1, 1.0000001)
+shape = SubResource("RectangleShape2D_vkqoe")
+one_way_collision = true
