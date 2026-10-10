@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://2knslku1q0pb" path="res://scens/traps.tscn" id="6_gpwcj"]
 [ext_resource type="PackedScene" uid="uid://b8i0j0e21hb51" path="res://scens/enemy.tscn" id="7_i34al"]
 [ext_resource type="AudioStream" uid="uid://dt00jxqpimga6" path="res://assets/sound/игра.wav" id="8_drqnf"]
+[ext_resource type="PackedScene" uid="uid://5k6ex21jy8fv" path="res://level_2.tscn" id="9_0sdli"]
 [ext_resource type="PackedScene" uid="uid://nvp5pa5qhuqs" path="res://scens/next_level.tscn" id="9_x436v"]
-[ext_resource type="PackedScene" uid="uid://doq5dpmxv34mq" path="res://scens/menu.tscn" id="10_nufnj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3an71"]
 texture = ExtResource("3_xahwf")
@@ -225,4 +225,4 @@ autoplay = true
 
 [node name="Next_level" parent="." unique_id=162711273 instance=ExtResource("9_x436v")]
 position = Vector2(2268, 577)
-level = ExtResource("10_nufnj")
+level = ExtResource("9_0sdli")
